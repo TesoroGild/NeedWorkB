@@ -1,6 +1,7 @@
 from enum import Enum
 from pydantic import BaseModel
 
+
 class Role(str, Enum):
     admin = 'admin'
     employer = 'employer'
@@ -13,4 +14,6 @@ class User(BaseModel):
     email: str
     password: str
     role: Role
-
+    
+    class Config:
+        orm_mode = True
