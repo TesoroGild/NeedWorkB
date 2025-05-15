@@ -17,3 +17,20 @@ class User(BaseModel):
     
     class Config:
         orm_mode = True
+
+class UserCredentials(BaseModel):
+    username: str
+    password: str
+
+    class Config:
+        orm_mode = True
+
+class UserResponse(BaseModel):
+    username: str
+    first_name: str
+    last_name: str
+    email: str
+    role: Role
+    
+    class Config:
+        orm_mode = True
